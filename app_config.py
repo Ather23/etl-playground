@@ -8,3 +8,4 @@ class AppConfig:
     def __init__(self):
         self.SocrataApiBaseUrl = "https://data.cityofchicago.org/resource/ydr8-5enu.json"
         self.SocratSecret = ""
+        self.CsvPath ="../data/kc_house_data.csv"

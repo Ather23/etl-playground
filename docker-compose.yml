@@ -34,6 +34,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-superset
+    command: >
+      superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin
+      && superset init
+    ports:
+      - 8088:8088
 
 
 networks:
