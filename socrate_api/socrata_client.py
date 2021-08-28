@@ -29,17 +29,20 @@ class SocrataClient:
         """
         offset = 0
         while True:
-            result = requests.get(self._BASE_URL,
-                                  headers=self._get_headers(),
-                                  params={
-                                      "$limit": limit,
-                                      "$offset": offset,
-                                      "$order": "id"
-                                  })
-            offset += offset_step
-            yield json.loads(result.content)
-            if result.content is None:
-                break
+            try:
+                result = requests.get(self._BASE_URL,
+                                      headers=self._get_headers(),
+                                      params={
+                                          "$limit": limit,
+                                          "$offset": offset,
+                                          "$order": "id"
+                                      })
+                offset += offset_step
+                yield json.loads(result.content)
+                if result.content is None:
+                    break
+            except Exception as e:
+                continue
 
     def get_housing_data(self, limit=100):
         """
