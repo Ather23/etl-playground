@@ -17,7 +17,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.FileHandler(
-            os.path.normpath('./logs/csv_data/csv_job_{}.log'.format(
+            os.path.normpath('./etl_logs/csv_data/csv_job_{}.log'.format(
                 datetime.utcnow().strftime("%d%m%Y-%H%M%S")))),
         logging.StreamHandler(sys.stdout)
     ]

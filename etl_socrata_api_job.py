@@ -16,7 +16,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.FileHandler(
-            os.path.normpath('./logs/socrata_data/socrata_job_{}.log'.format(datetime.utcnow().strftime(format)))),
+            os.path.normpath('./etl_logs/socrata_data/socrata_job_{}.log'.format(datetime.utcnow().strftime(format)))),
         logging.StreamHandler(sys.stdout)
     ]
 )
