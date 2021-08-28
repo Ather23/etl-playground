@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-dagster = "*"
 mysql-connector-python = "*"
 pandas = "*"
 requests = "*"
 circuitbreaker ="*"
+APScheduler="3.3.1"
 
 [dev-packages]
 

@@ -1,15 +1,15 @@
 import mysql.connector
-
-
+import os
 class DbConfig:
     """
     TODO: read from configuration or env variables
     """
 
     def __init__(self,database):
-        self.Host = "172.20.80.1"
-        self.UserName = "user"
-        self.Password = "password"
+        #TODO: Read from config instead
+        self.Host = 'mysql_db'
+        self.UserName = os.environ['MYSQL_USER']
+        self.Password = os.environ['MYSQL_PASSWORD']
         self.Database = database
         self.MysqlConnctor = self.mysq_connector()
 

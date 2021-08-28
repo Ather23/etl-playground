@@ -1,6 +1,5 @@
 import json
 import requests
-
 from app_config import AppConfig
 from circuitbreaker import circuit
 
@@ -8,6 +7,7 @@ from circuitbreaker import circuit
 class SocrataClient:
     """
     This is a api wrapper for Socrata Api
+    TODO: Remove App config dependency
     """
 
     def __init__(self):
@@ -22,8 +22,8 @@ class SocrataClient:
         """
         Fetches data from api as a generator
         TODO: Fix circuit breaker and test
-        TODO: Check if exit criteria is met
-        :param limit: number of resuls to fetch
+        TODO: Check if while loop breaks
+        :param limit: number of results to fetch
         :param offset_step: next offset
         :return:
         """

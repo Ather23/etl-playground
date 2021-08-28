@@ -1,18 +1,52 @@
 version: '3.8'
 
-# Run as
-# docker-compose build; docker-compose up -d
-# Check with
-# docker ps
-# Then check the logs with
-# docker logs --tail 50 $service_name
-# docker-compose images
-# docker-compose logs --tail 20 $service_name
-
 services:
 
+  etl_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: properly_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    command: >
+            python ./etl_socrata_api_job.py
+    links:
+      - mysql_db
+    depends_on:
+      mysql_db:
+        condition: service_healthy
+    restart:
+      on-failure
+    networks:
+      - app_network
+
+  etl_csv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: properly_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    command: >
+      python ./etl_csv_job.py
+    links:
+      - mysql_db
+    depends_on:
+      mysql_db:
+        condition: service_healthy
+    restart:
+      on-failure
+    networks:
+      - app_network
+
+
   mysql_db:
-    image: mysql:5.7
+    image: mysql:8.0.26
     environment:   # Set up mysql database name and password
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: properly_db
@@ -20,29 +54,13 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 50
     networks:
-      - mysql_net
-  rabbitmq:
-    image: rabbitmq:3-management-alpine
-    container_name: 'rabbitmq'
-    ports:
-      - 5672:5672
-      - 15672:15672
-    networks:
-      - rabbitmq_go_net
-  superset:
-    build:
-      context: .
-      dockerfile: Dockerfile-superset
-    command: >
-      superset fab create-admin --username admin --firstname Superset --lastname Admin --email admin@superset.com --password admin
-      && superset init
-    ports:
-      - 8088:8088
-
+      - app_network
 
 networks:
-  mysql_net:
-    driver: bridge
-  rabbitmq_go_net:
+  app_network:
     driver: bridge

@@ -1,8 +1,0 @@
-FROM apache/superset
-# Switching to root to install the required packages
-USER root
-RUN pip install mysqlclient
-RUN pip install sqlalchemy-redshift
-# Switching back to using the `superset` user
-
-USER superset
