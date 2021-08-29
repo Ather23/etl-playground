@@ -1,0 +1,10 @@
+2021-08-27 02:28:33,854 [INFO] Strating API pipelines
+2021-08-27 02:28:33,855 [INFO] Extracting csv_data..
+2021-08-27 02:28:37,193 [INFO] Loading data..
+2021-08-27 02:28:39,486 [ERROR] 2003: Can't connect to MySQL server on '%-.100s:%u' (%s) (Warning: %u format: a number is required, not str)
+2021-08-27 02:28:44,112 [INFO] Loading data..
+2021-08-27 02:28:46,395 [ERROR] 2003: Can't connect to MySQL server on '%-.100s:%u' (%s) (Warning: %u format: a number is required, not str)
+2021-08-27 02:28:57,924 [INFO] Loading data..
+2021-08-27 02:29:00,231 [ERROR] 2003: Can't connect to MySQL server on '%-.100s:%u' (%s) (Warning: %u format: a number is required, not str)
+2021-08-27 02:29:16,243 [INFO] Loading data..
+2021-08-27 02:29:18,545 [ERROR] 2003: Can't connect to MySQL server on '%-.100s:%u' (%s) (Warning: %u format: a number is required, not str)

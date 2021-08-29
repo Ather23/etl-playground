@@ -1,0 +1,29 @@
+2021-08-27 02:27:39,370 [INFO] Strating API pipelines
+2021-08-27 02:27:39,370 [INFO] Extracting csv_data..
+2021-08-27 02:27:40,395 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:40,397 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:40,397 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:40,397 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:40,398 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:40,398 [INFO] Loading data..
+2021-08-27 02:27:42,699 [ERROR] 2003: Can't connect to MySQL server on '%-.100s:%u' (%s) (Warning: %u format: a number is required, not str)
+2021-08-27 02:27:43,656 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:43,656 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:43,658 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:43,658 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:43,658 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:43,658 [INFO] Loading data..
+2021-08-27 02:27:45,936 [ERROR] 2003: Can't connect to MySQL server on '%-.100s:%u' (%s) (Warning: %u format: a number is required, not str)
+2021-08-27 02:27:46,805 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:46,805 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:46,805 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:46,805 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:46,805 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:46,805 [INFO] Loading data..
+2021-08-27 02:27:49,092 [ERROR] 2003: Can't connect to MySQL server on '%-.100s:%u' (%s) (Warning: %u format: a number is required, not str)
+2021-08-27 02:27:49,784 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:49,784 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:49,784 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:49,784 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:49,784 [ERROR] unhashable type: 'dict'
+2021-08-27 02:27:49,784 [INFO] Loading data..
