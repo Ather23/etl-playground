@@ -1,7 +1,6 @@
 # Properly ETL
 
 ## Requirements
-Install the dependencies and devDependencies and start the server.
 ```sh
 docker
 ```
